@@ -1,5 +1,5 @@
-@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
-@import "../node_modules/ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham.scss";
+@import "~ag-grid-community/src/styles/ag-grid.scss";
+@import "~ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham.scss";
 $odd-row-background-color: #CFD8DC;
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
