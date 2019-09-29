@@ -1,29 +1,23 @@
-import { Component, OnInit, ViewChild,  Input} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AgGridAngular } from 'ag-grid-angular';
-import {FormControl} from '@angular/forms';
-import {MatDialog, MatDialogConfig} from "@angular/material";
-import {InputboxComponent} from "./inputbox/inputbox.component";
 
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+  selector: 'app-aggrid',
+  templateUrl: './aggrid.component.html',
+  styleUrls: ['./aggrid.component.scss']
 })
-export class AppComponent {
-    @Input()
+export class AggridComponent implements OnInit {
+
   private gridApi;
   private gridColumnApi;
 
   private columnDefs;
   private defaultColDef;
   private rowData: [];
-  title = 'developerNotes';
-  tabs = ['First'];
-  selected = new FormControl(0);
 
-  constructor(private http: HttpClient, private dialog: MatDialog) {
+  constructor(private http: HttpClient) {
     this.columnDefs = [
       {
         headerName: "Athlete",
@@ -107,36 +101,8 @@ export class AppComponent {
       });
   }
 
-  addTab(selectAfterAdding: boolean) {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    dialogConfig.data = {};
-    dialogConfig.data.description = '';
-
-    const dialogRef = this.dialog.open(InputboxComponent,
-        dialogConfig);
-
-
-    dialogRef.afterClosed().subscribe(
-        val => {
-          console.log("Dialog output:", val);
-          if (val) {
-            this.tabs.push(val.description);
-            this.selected.setValue(this.tabs.length - 1);
-          }
-
-        });
-
-
-    // if (selectAfterAdding) {
-    //   this.selected.setValue(this.tabs.length - 1);
-    // }
+  ngOnInit() {
+    
   }
 
-  removeTab(index: number) {
-    this.tabs.splice(index, 1);
-  }
 }

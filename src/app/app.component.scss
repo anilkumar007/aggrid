@@ -1,0 +1,57 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.bg-div{
+    background-color: #343a40;
+    height: 50px;
+    padding: 2px 0px;
+    position: relative;
+}
+
+
+.nav > .nav-item > .nav-link {
+    color: #fff;
+    height: 0px;
+    padding: 0px 10px;
+}
+
+.nav .nav-item {
+    padding: 20px 10px;
+    margin: 0px 2px;
+    cursor: pointer;
+}
+
+.nav > .nav-item:hover {
+    background-color:#fff;
+}
+
+.nav > .nav-item:hover a {
+    color: #000;
+}
+
+.nav .dropdown-menu {
+    padding: 0px 10px 10px 10px;
+    width: 300px;
+    top:103%;
+    border-radius: 0px;
+    box-shadow: 5px 5px #888888;
+    border: 0px;
+}
+
+.nav .dropdown-menu .dropdown-item {
+    border-bottom: 1px solid #000;
+    padding: 2px 10px;
+}
+
+.logo-img{
+    float: right;
+    position: relative;
+    height: 48px;
+}
+
+.example-input-label,
+.example-add-tab-button,
+.example-delete-tab-button {
+  margin: 8px;
+}
