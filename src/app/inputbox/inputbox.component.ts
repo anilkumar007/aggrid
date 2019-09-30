@@ -1,5 +1,5 @@
-import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import {Component, Inject, OnInit, ViewEncapsulation, Optional} from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 
 @Component({
@@ -14,8 +14,8 @@ export class InputboxComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private dialogRef: MatDialogRef<InputboxComponent>,
-        @Inject(MAT_DIALOG_DATA) {description} ) {
+         @Optional() public dialogRef: MatDialogRef<InputboxComponent>,
+        @Optional() @Inject(MAT_DIALOG_DATA) {description} ) {
 
         this.description = description;
 

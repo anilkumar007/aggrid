@@ -25,7 +25,6 @@ import {
   MatCheckboxModule,
   MatChipsModule,
   MatDatepickerModule,
-  MatDialogModule,
   MatDividerModule,
   MatExpansionModule,
   MatGridListModule,
@@ -52,6 +51,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputboxComponent } from './inputbox/inputbox.component';
 
@@ -74,6 +74,7 @@ import { InputboxComponent } from './inputbox/inputbox.component';
     DragDropModule,
     MatAutocompleteModule,
     MatBadgeModule,
+    MatDialogModule,
     MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -82,7 +83,6 @@ import { InputboxComponent } from './inputbox/inputbox.component';
     MatChipsModule,
     MatStepperModule,
     MatDatepickerModule,
-    MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
     MatGridListModule,
@@ -111,7 +111,10 @@ import { InputboxComponent } from './inputbox/inputbox.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: MatDialogRef, useValue: ''}, {
+  provide: MAT_DIALOG_DATA,
+  useValue: '' // Add any data you wish to test if it is passed/used correctly
+}],
   bootstrap: [AppComponent],
   entryComponents: [InputboxComponent]
 })
