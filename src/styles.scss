@@ -1,6 +1,7 @@
 @import "~ag-grid-community/src/styles/ag-grid.scss";
 @import "~ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham.scss";
-$odd-row-background-color: #CFD8DC;
+$odd-row-background-color: lightblue;
+$even-row-background-color: lightcyan;
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
@@ -16,4 +17,22 @@ body {
 .version-info {
   font-size: 8pt;
   float: right;
+}
+
+.ag-header-group-cell-label, .ag-header-cell-label {
+    color:#1b6d85 !important;
+    font-weight: bold !important;
+    font-size: 14px;
+}
+
+.ag-theme-balham .ag-header {
+  background-color: #0ae8e8;
+}
+
+.ag-theme-balham .ag-row-even {
+  background-color: lightcyan;
+}
+
+.ag-theme-balham .ag-row-odd {
+  background-color: lightblue;
 }
